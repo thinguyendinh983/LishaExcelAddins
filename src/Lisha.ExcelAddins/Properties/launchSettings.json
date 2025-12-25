@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Excel": {
+      "commandName": "Executable",
+      "executablePath": "C:\\Program Files\\Microsoft Office\\Office16\\EXCEL.EXE",
+      "commandLineArgs": "/x \"Lisha.ExcelAddins-AddIn64.xll\""
+    }
+  }
+}
