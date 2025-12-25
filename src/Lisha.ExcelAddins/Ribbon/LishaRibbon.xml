@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<customUI xmlns='http://schemas.microsoft.com/office/2006/01/customui' loadImage='LoadImage'>
+	<ribbon>
+		<tabs>
+			<tab id='tabLisha' label='Lisha'>
+				<group id='groupConvert' label='Chuyển đổi'>
+					<button id='btnNumToString' label='Chuyển số sang chữ' size="large" image="NumToString" onAction='OnbtnNumToStringPressed'/>
+				</group >
+				<group id='groupAbout'>
+					<button id='btnAbout' label='Thông tin' size="large" image="About" onAction='OnbtnAboutPressed'/>
+				</group >
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
