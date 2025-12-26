@@ -4,10 +4,16 @@
 		<tabs>
 			<tab id='tabLisha' label='Lisha'>
 				<group id='groupConvert' label='Chuyển đổi'>
-					<button id='btnNumToString' label='Chuyển số sang chữ' size="large" image="NumToString" onAction='OnbtnNumToStringPressed'/>
+					<button id='btnNumToString' label='Chuyển số sang chữ' size="large" image="NumToString" onAction='OnbtnNumToStringClick'/>
+				</group >
+				<group id='groupMove' label='Di Chuyển'>
+					<button id='btnMoveRowsUp' label='Di chuyển hàng lên' size="large" image="Move Up" onAction='OnbtnMoveRowsUpClick'/>
+					<button id='btnMoveRowsDown' label='Di chuyển hàng xuống' size="large" image="Move Down" onAction='OnbtnMoveRowsDownClick'/>
+					<button id='btnMoveColumnsLeft' label='Di chuyển cột sang trái' size="large" image="Move Left" onAction='OnbtnMoveColumnsLeftClick'/>
+					<button id='btnMoveColumnsRight' label='Di chuyển cột sang phải' size="large" image="Move Right" onAction='OnbtnMoveColumnsRightClick'/>
 				</group >
 				<group id='groupAbout'>
-					<button id='btnAbout' label='Thông tin' size="large" image="About" onAction='OnbtnAboutPressed'/>
+					<button id='btnAbout' label='Thông tin' size="large" image="About" onAction='OnbtnAboutClick'/>
 				</group >
 			</tab>
 		</tabs>
