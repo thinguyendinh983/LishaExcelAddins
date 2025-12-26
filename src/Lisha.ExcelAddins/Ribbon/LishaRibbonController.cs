@@ -19,7 +19,15 @@ namespace Lisha.ExcelAddins.Ribbon
             // This will return the image resource with the name specified in the image='xxxx' tag
             return LishaResource.ResourceManager.GetObject(imageId);
         }
-        public void OnbtnNumToStringPressed(IRibbonControl control)
+
+        // Show About dialog
+        public void OnbtnAboutClick(IRibbonControl control)
+        {
+            MessageBox.Show("Lisha Excel Add-in\nVersion 1.0.0\n\nDeveloped by Nguyen Dinh Thi\nEmail: thinguyendinh983@gmail.com",
+                "About Lisha Excel Add-in", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        public void OnbtnNumToStringClick(IRibbonControl control)
         {
             // Get the Excel Application object via Excel-DNA
             Application xlApp = (Application)ExcelDnaUtil.Application;
@@ -29,12 +37,34 @@ namespace Lisha.ExcelAddins.Ribbon
 
             // Set the value of the active cell
             activeCell.Value = Functions.LishaFunctions.LishaSoSangChu(activeCell.Value, true);
+
+            // Clean up COM objects (important for stability)
+            Marshal.ReleaseComObject(activeCell);
+            Marshal.ReleaseComObject(xlApp);
         }
 
-        public void OnbtnAboutPressed(IRibbonControl control)
+        // Move selected rows up by one position
+        public void OnbtnMoveRowsUpClick(IRibbonControl control)
         {
-            MessageBox.Show("Lisha Excel Add-in\nVersion 1.0.0\n\nDeveloped by Nguyen Dinh Thi\nEmail: thinguyendinh983@gmail.com",
-                "About Lisha Excel Add-in", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Commands.RowCommands.MoveRowsUp();
+        }
+
+        // Move selected rows down by one position
+        public void OnbtnMoveRowsDownClick(IRibbonControl control)
+        {
+            Commands.RowCommands.MoveRowsDown();
+        }
+
+        // Move selected columns left by one position
+        public void OnbtnMoveColumnsLeftClick(IRibbonControl control)
+        {
+            Commands.ColumnCommands.MoveColumnsLeft();
+        }
+
+        // Move selected columns right by one position
+        public void OnbtnMoveColumnsRightClick(IRibbonControl control)
+        {
+            Commands.ColumnCommands.MoveColumnsRight();
         }
     }
 }
